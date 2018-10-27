@@ -14,6 +14,15 @@ router.get('/getAll', (req, res) => {
     }, 700);
 });
 
+router.post('/save', (req, res) => {
+    var bd = req.app.get("bd");
+    var product =  req.body;
+    bd.productos.push(product);
+    res.json({
+        success:true
+    });
+});
+
 
 
 module.exports = router;
